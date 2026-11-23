@@ -1,0 +1,19 @@
+Validation performed 2026-11-20
+
+PASS: Verilator 5.048 lint (-Wall, intentional FPGA initialization warning
+      PROCASSINIT disabled).
+PASS: 60,562 FSM event checks including all 6,561 eight-key sequences,
+      handout cases, physical-button simulation, debounce/hold/release,
+      reset, LED ASCII U/A, alarm blinking, and recovery.
+PASS: Yosys synth_xilinx -family xc7 followed by check -assert.
+      No structural problems. ABC emitted informational combinational-network
+      warnings during LUT mapping. This is not routed timing verification.
+PASS: Vivado project XML parses; all referenced source/constraint/test files exist.
+
+NOT RUN: Vivado implementation, routed timing, bitstream generation, JTAG,
+         physical ZedBoard demonstration. Windows program launch fails in
+         this WSL environment with UtilBindVsockAnyPort socket error.
+
+Reproduce simulation: bash scripts/test.sh
+Build in Windows Vivado: source scripts/build_vivado.tcl
+See README.txt for controls, assumptions, and submission limitations.
